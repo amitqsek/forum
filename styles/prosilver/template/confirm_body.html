@@ -1,0 +1,20 @@
+<!-- INCLUDE overall_header.html -->
+
+<form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
+<div class="panel">
+	<h5 class="post-re-title">{MESSAGE_TITLE}</h5>
+	<div class="inner post forabg padding-15 mb-0">
+
+	<p>{MESSAGE_TEXT}</p>
+	
+	<fieldset class="submit-buttons">
+		{S_HIDDEN_FIELDS}
+		<input type="submit" name="confirm" value="{L_YES}" class="btn btn-primary btn-sm" />&nbsp; 
+		<input type="submit" name="cancel" value="{L_NO}" class="btn btn-primary btn-sm" />
+	</fieldset>
+
+	</div>
+</div>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,76 @@
+<!-- INCLUDE overall_header.html -->
+
+<script type="text/javascript">
+// <![CDATA[
+	onload_functions.push('document.getElementById("<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->").focus();');
+// ]]>
+</script>
+
+<div class="pt-40 pb-40">
+	<div class="white-box form-box">
+		<div class="form-inner-box pb-30">
+		    <div class="section-title mb-20">
+		    	<h2><!-- IF LOGIN_EXPLAIN -->{LOGIN_EXPLAIN}<!-- ELSE -->{L_LOGIN}<!-- ENDIF --></h2>
+		    </div>
+			<form action="{S_LOGIN_ACTION}" method="post" id="login">
+				
+				<fieldset <!-- IF not S_CONFIRM_CODE -->class="fields1"<!-- ELSE -->class="fields2"<!-- ENDIF -->>
+				<!-- IF LOGIN_ERROR --><div class="error">{LOGIN_ERROR}</div><!-- ENDIF -->
+				<div class="form-group">
+					<label for="{USERNAME_CREDENTIAL}">{L_USERNAME}:</label>
+					<input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}:</label>
+					<input type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" class="form-control" />
+				</div>
+				<div class="forgot-link text-right">					
+					<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+						<!-- IF U_SEND_PASSWORD --><a href="/forgot">Forgot password?</a><!-- ENDIF -->
+						<!-- IF U_RESEND_ACTIVATION --><a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a><!-- ENDIF -->
+					<!-- ENDIF -->
+				</div>
+				<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+					<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+					<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+				<!-- ENDIF -->
+				<!-- IF S_DISPLAY_FULL_LOGIN -->
+				<!-- IF S_AUTOLOGIN_DISABLED -->
+				<dl>
+					<dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label></dd>
+					<dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label></dd>
+				</dl>
+				<!-- ENDIF -->
+				<!-- ENDIF -->
+
+				{S_LOGIN_REDIRECT}
+				<div class="form-group">
+					{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="btn btn-primary" />
+				</div>
+				</fieldset>
+
+				<!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
+				<div class="panel">
+					<div class="inner"><span class="corners-top"><span></span></span>
+
+					<div class="content">
+						<h3>{L_REGISTER}</h3>
+						<p>{L_LOGIN_INFO}</p>
+						<p><strong><a href="{U_TERMS_USE}">{L_TERMS_USE}</a> | <a href="{U_PRIVACY}">{L_PRIVACY}</a></strong></p>
+						<hr class="dashed" />
+						<p><a href="{U_REGISTER}" class="button2">{L_REGISTER}</a></p>
+					</div>
+
+					<span class="corners-bottom"><span></span></span></div>
+				</div>
+			<!-- ENDIF -->
+
+			</form>
+		</div>
+		<div class="form-register-link">
+			Don’t have a CoinMage account? <a href="/register">Register</a>      
+		</div>
+	</div>
+</div>
+
+<!-- INCLUDE overall_footer.html -->

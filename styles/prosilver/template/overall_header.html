@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<meta http-equiv="content-language" content="{S_USER_LANG}" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="resource-type" content="document" />
+	<meta name="distribution" content="global" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	{META}
+	<title>CoinMage | <!-- IF S_IN_MCP -->{L_MCP} | <!-- ELSEIF S_IN_UCP -->{L_UCP} | <!-- ENDIF -->{PAGE_TITLE}</title>
+	<!-- IF S_ENABLE_FEEDS -->
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+	<!-- ENDIF -->
+		<!--
+			phpBB style name: prosilver
+			Based on style:   prosilver (this is the default phpBB3 style)
+			Original author:  Tom Beddard ( http://www.subBlue.com/ )
+			Modified by:
+		-->
+		<script type="text/javascript">
+		// <![CDATA[
+		var jump_page = '{LA_JUMP_PAGE}:';
+		var on_page = '{ON_PAGE}';
+		var per_page = '{PER_PAGE}';
+		var base_url = '{A_BASE_URL}';
+		var style_cookie = 'phpBBstyle';
+		var style_cookie_settings = '{A_COOKIE_SETTINGS}';
+		var onload_functions = new Array();
+		var onunload_functions = new Array();
+		<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+		var url = '{UA_POPUP_PM}';
+		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+		<!-- ENDIF -->
+		/**
+		* Find a member
+		*/
+		function find_username(url)
+		{
+			popup(url, 760, 570, '_usersearch');
+			return false;
+		}
+		/**
+		* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+		*/
+		window.onload = function()
+		{
+			for (var i = 0; i < onload_functions.length; i++)
+			{
+				eval(onload_functions[i]);
+			}
+		};
+		window.onunload = function()
+		{
+			for (var i = 0; i < onunload_functions.length; i++)
+			{
+				eval(onunload_functions[i]);
+			}
+		};
+		// ]]>
+	</script>
+	<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/styleswitcher.js"></script>
+	<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
+	<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+	<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
+	<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+	<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+	<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<!-- ENDIF -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/assets/images/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="/assets/images/ico/favicon.png">
+	<!-- CSS Plugins -->
+	<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/main.css" rel="stylesheet">
+	<link href="/assets/css/plugin.css" rel="stylesheet">
+	<!-- CSS Custom -->
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/custom.css" rel="stylesheet">
+	<!-- JS -->
+	<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="/assets/datatables/jquery-ui.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript" src="/assets/js/slick.min.js" defer></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+	<div id="introLoader" class="introLoading introLoader gifLoader theme-dark" style="display: block;"><div id="introLoaderSpinner" class="gifLoaderInner" style=""></div></div>
+	<div class="container-wrapper">
+
+		<!-- start Header -->
+		<header id="header">
+
+			<!-- start Navbar (Header) -->
+			<nav class="navbar navbar-primary navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt=""></a>
+					</div>
+					<div id="navbar" class="collapse navbar-collapse navbar-arrow">
+						<ul class="nav navbar-nav pull-right" id="responsive-menu">
+							<li><a href="/">Home</a></li>
+							<li><a href="/pricing">Pricing</a></li>
+							<li><a href="/referral-program">Referral Program</a></li>
+							<li><a href="/blog">Blog</a></li>
+							<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+							<li><a href="/support{SUPPORTURL}">Support</a></li>
+							<!-- ENDIF -->
+							<!-- IF not S_USER_LOGGED_IN -->
+							<li><a href="/support">Support</a></li>
+							<!-- ENDIF -->
+							<li class="active"> <a href="/forum">Forum</a></li>
+							<li><a href="/contact-us">Contact Us</a></li>							
+
+							<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+							<li>
+								<a href="javascript:;">My Account</a>
+								<ul class="dropdown-user">
+									<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-tachometer"></i> {L_PROFILE}</a></li>
+									<!-- IF S_DISPLAY_PM --> <li><i class="fa fa-envelope"></i> (<a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a>)</li> <!-- ENDIF -->
+									<!-- IF S_DISPLAY_SEARCH --> <li><a href="{U_SEARCH_SELF}"><i class="fa fa-search"></i> {L_SEARCH_SELF}</a></li> <!-- ENDIF -->
+									<!-- IF U_RESTORE_PERMISSIONS --> <li><a href="{U_RESTORE_PERMISSIONS}"><i class="fa fa-user"></i> {L_RESTORE_PERMISSIONS}</a></li> <!-- ENDIF -->
+									<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-question"></i> {L_FAQ}</a></li> <!-- IF not S_IS_BOT -->
+									<!-- IF S_DISPLAY_MEMBERLIST --> 
+									<!-- <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-users"></i> {L_MEMBERLIST}</a></li> --> 
+									<!-- ENDIF -->
+									<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --> <li class="icon-register"><a href="{U_REGISTER}"><i class="fa fa-user"></i> {L_REGISTER}</a></li> <!-- ENDIF -->
+									<li role="separator" class="divider"></li>
+									<li><a href="/logout" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-power-off"></i> {L_LOGIN_LOGOUT}</a></li>
+									<!-- ENDIF -->
+									<!-- IF U_EMAIL_TOPIC -->
+									<li><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail"><i class="fa fa-tachometer"></i> {L_EMAIL_TOPIC}</a></li>
+									<!-- ENDIF -->
+									<!-- IF U_EMAIL_PM -->
+									<li><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail"><i class="fa fa-tachometer"></i> {L_EMAIL_PM}</a></li>
+									<!-- ENDIF -->
+									<!-- IF U_PRINT_TOPIC -->
+									<li><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print"><i class="fa fa-tachometer"></i> {L_PRINT_TOPIC}</a></li>
+									<!-- ENDIF -->
+									<!-- IF U_PRINT_PM -->
+									<li><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print"><i class="fa fa-tachometer"></i> {L_PRINT_PM}</a></li>
+									<!-- ENDIF -->
+								</ul>
+							</li>
+							<!-- ELSE -->
+							<li><a href="/login/?f=forum" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
+							<li><a href="/register">Register</a></li>
+							<!-- ENDIF -->
+						</ul>
+					</div>
+				</div>
+				<div id="slicknav-mobile"></div>
+			</nav>
+			<!-- end Navbar (Header) -->
+
+		</header>
+		<!-- end Header -->
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<h1 class="page-title">Forum</h1>
+				<ol class="breadcrumb">
+					<li><a href="/">Home</a></li>
+					<li class="active">Forum</li>
+				</ol>
+			</div>
+		</div>
+		<div id="wrap">
+			<div class="container pv-40">
+				<div id="page-body">
+					<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+					<div id="information" class="rules">
+						<div class="inner">
+							<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}							
+						</div>
+					</div>
+				<!-- ENDIF -->
